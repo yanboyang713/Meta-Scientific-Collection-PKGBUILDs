@@ -1,0 +1,13 @@
+#+title: Readme
+
+* Meta Scientific Linux Collection PKGBUILDs
+Meta Scientific Collection of PKGBUILDs
+
+** Powered by
+
++ GitHub Action
++ [[https://github.com/pacman-repo-builder][pacman-repo-builder]]
+
+** Installation
+
+Go to [[https://github.com/KSXGitHub/pacman-repo][the target repo]] for further instructions.
