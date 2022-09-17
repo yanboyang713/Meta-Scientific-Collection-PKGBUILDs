@@ -25,20 +25,10 @@ jobs:
         run: cat meta-scientific-repository/failed-build-records/meta-scientific-pacman-packages.yaml
 
       - name: Build pacman packages
+        if: steps.should_deploy.outputs.should_deploy == 'true'
         uses: pacman-repo-builder/action@0.0.0-rc.62
         with:
-          command: |
-            set -o errexit -o pipefail -o nounset
-
-            (
-              echo ''
-              echo '[meta-scientific-linux]'
-              echo 'SigLevel = Optional'
-              echo 'Server = https://raw.github.com/yanboyang713/Meta-Scientific-repository/main/repo'
-            ) >> /etc/pacman.conf
-            pacman -Sy
-
-            build-pacman-repo build
+          command: build-pacman-repo build
 
       - name: Inspect changed failed build record
         continue-on-error: true
