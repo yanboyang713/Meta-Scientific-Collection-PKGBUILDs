@@ -35,6 +35,7 @@ jobs:
         run: cat meta-scientific-repository/failed-build-records/meta-scientific-pacman-packages.yaml
 
       - name: Upload packages
+	if: steps.should_deploy.outputs.should_deploy == 'true'
         env:
           COMMIT_AUTHOR_NAME: ${{ secrets.COMMIT_AUTHOR_NAME }}
           COMMIT_AUTHOR_EMAIL: ${{ secrets.COMMIT_AUTHOR_EMAIL }}
@@ -42,8 +43,8 @@ jobs:
           AUTH_PASSWORD: ${{ secrets.AUTH_PASSWORD }}
         run: |
           cd meta-scientific-repository
-          git config user.name "$COMMIT_AUTHOR_NAME"
-          git config user.email "$COMMIT_AUTHOR_EMAIL"
+          git config --global user.name "$COMMIT_AUTHOR_NAME"
+          git config --global user.email "$COMMIT_AUTHOR_EMAIL"
           git add -v .
           git commit -m "Update by $GITHUB_REPOSITORY@$GITHUB_SHA" --allow-empty
           echo "username=$AUTH_USERNAME" >> /tmp/git-login.txt
