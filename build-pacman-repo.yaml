@@ -1,26 +1,11 @@
 global-settings:
   container: members
-  repository: pacman-repo/repo/khai.db.tar.gz
+  repository: Meta-Scientific-repository/repo/meta-scientific.db.tar.gz
   dereference-database-symlinks: true
   clean-after-build: true
-  packager: 'Hoàng Văn Khải <hvksmr1996@gmail.com>'
+  packager: 'Boyang Yan <yanboyang713@gmail.com>'
   check: enabled
   allow-failure: false
   install-missing-dependencies: true
 members:
-  - directory: bat-extras-dev
-  - directory: cratetorrent-cli-dev
-  - directory: dino-runner-data
-  - directory: dino-runner-miniserve
-  - directory: gedit-autotab-dev
-  - directory: gnome-shell-extension-workspace-isolated-dash
-  - directory: ion-shell-dev
-  - directory: makepad-dev
-  - directory: nottetris2-dev
-  - directory: numix-circle-icon-theme-dev
-  - directory: numix-icon-theme-dev
-  - directory: oh-my-zsh-dev
-  - directory: ruffle-nightly
-  - directory: vlc4-dev
-  - directory: zsh-autocomplete-dev
-  - directory: zsh-theme-powerlevel9k
+  - directory: meta-screenshot

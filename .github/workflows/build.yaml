@@ -1,0 +1,66 @@
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install APT packages
+        run: sudo apt install python3 python3-yaml
+
+      - name: Run tests
+        run: ./test.bash
+
+      - name: Clone target repository
+        run: git clone https://github.com/yanboyang713/Meta-Scientific-repository.git meta-scientific-repository
+
+      - name: Inspect restored failed build record
+        continue-on-error: true
+        run: cat meta-scientific-repository/failed-build-records/meta-scientific-pacman-packages.yaml
+
+      - name: Build pacman packages
+        uses: pacman-repo-builder/action@0.0.0-rc.62
+        with:
+          command: |
+            set -o errexit -o pipefail -o nounset
+
+            (
+              echo ''
+              echo '[meta-scientific-linux]'
+              echo 'SigLevel = Optional'
+              echo 'Server = https://raw.github.com/yanboyang713/Meta-Scientific-repository/main/repo'
+            ) >> /etc/pacman.conf
+            pacman -Sy
+
+            build-pacman-repo build
+
+      - name: Inspect changed failed build record
+        continue-on-error: true
+        run: cat meta-scientific-repository/failed-build-records/meta-scientific-pacman-packages.yaml
+
+      - name: Upload packages
+        env:
+          COMMIT_AUTHOR_NAME: ${{ secrets.COMMIT_AUTHOR_NAME }}
+          COMMIT_AUTHOR_EMAIL: ${{ secrets.COMMIT_AUTHOR_EMAIL }}
+          AUTH_USERNAME: yanboyang713
+          AUTH_PASSWORD: ${{ secrets.AUTH_PASSWORD }}
+        run: |
+          cd meta-scientific-repository
+          git config user.name "$COMMIT_AUTHOR_NAME"
+          git config user.email "$COMMIT_AUTHOR_EMAIL"
+          git add -v .
+          git commit -m "Update by $GITHUB_REPOSITORY@$GITHUB_SHA" --allow-empty
+          echo "username=$AUTH_USERNAME" >> /tmp/git-login.txt
+          echo "password=$AUTH_PASSWORD" >> /tmp/git-login.txt
+          echo '#! /bin/bash' >> /tmp/credential-helper
+          echo 'cat /tmp/git-login.txt' >> /tmp/credential-helper
+          chmod +x /tmp/credential-helper
+          git config credential.helper '/tmp/credential-helper'
+          git pull origin main --rebase=true # to avoid conflicts due to data races
+          git push origin main
