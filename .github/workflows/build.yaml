@@ -39,15 +39,15 @@ jobs:
           COMMIT_AUTHOR_NAME: ${{ secrets.COMMIT_AUTHOR_NAME }}
           COMMIT_AUTHOR_EMAIL: ${{ secrets.COMMIT_AUTHOR_EMAIL }}
           AUTH_USERNAME: yanboyang713
-          AUTH_PASSWORD: ${{ secrets.AUTH_PASSWORD }}
+          AUTH_PASSWORD: ${{ secrets.API_TOKEN_GITHUB }}
         run: |
           cd meta-scientific-repository
-          git config --global user.name "Boyang Yan"
-          git config --global user.email "yanboyang713@gmail.com"
+          git config user.name "$COMMIT_AUTHOR_NAME"
+          git config user.email "$COMMIT_AUTHOR_EMAIL"
           git add -v .
           git commit -m "Update by $GITHUB_REPOSITORY@$GITHUB_SHA" --allow-empty
           echo "username=$AUTH_USERNAME" >> /tmp/git-login.txt
-          echo "password=$AUTH_PASSWORD" >> /tmp/git-login.txt
+          echo "password=$API_TOKEN_GITHUB" >> /tmp/git-login.txt
           echo '#! /bin/bash' >> /tmp/credential-helper
           echo 'cat /tmp/git-login.txt' >> /tmp/credential-helper
           chmod +x /tmp/credential-helper
