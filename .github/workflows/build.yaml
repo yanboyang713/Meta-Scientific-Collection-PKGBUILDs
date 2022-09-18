@@ -34,23 +34,14 @@ jobs:
         continue-on-error: true
         run: cat meta-scientific-repository/failed-build-records/meta-scientific-pacman-packages.yaml
 
-      - name: Upload packages
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
         env:
-          COMMIT_AUTHOR_NAME: ${{ secrets.COMMIT_AUTHOR_NAME }}
-          COMMIT_AUTHOR_EMAIL: ${{ secrets.COMMIT_AUTHOR_EMAIL }}
-          AUTH_USERNAME: yanboyang713
-          AUTH_PASSWORD: ${{ secrets.API_TOKEN_GITHUB }}
-        run: |
-          cd meta-scientific-repository
-          git config user.name "$COMMIT_AUTHOR_NAME"
-          git config user.email "$COMMIT_AUTHOR_EMAIL"
-          git add -v .
-          git commit -m "Update by $GITHUB_REPOSITORY@$GITHUB_SHA" --allow-empty
-          echo "username=$AUTH_USERNAME" >> /tmp/git-login.txt
-          echo "password=$API_TOKEN_GITHUB" >> /tmp/git-login.txt
-          echo '#! /bin/bash' >> /tmp/credential-helper
-          echo 'cat /tmp/git-login.txt' >> /tmp/credential-helper
-          chmod +x /tmp/credential-helper
-          git config credential.helper '/tmp/credential-helper'
-          git pull origin main --rebase=true # to avoid conflicts due to data races
-          git push origin main
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'meta-scientific-repository'
+          destination-github-username: 'yanboyang713'
+          destination-repository-name: 'Meta-Scientific-repository'
+          user-email: yanboyang713@gmail.com
+          target-branch: main
