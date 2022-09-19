@@ -9,3 +9,4 @@ global-settings:
   install-missing-dependencies: true
 members:
   - directory: meta-screenshot
+  - directory: meta-emacs

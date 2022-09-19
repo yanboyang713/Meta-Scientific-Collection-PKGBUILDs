@@ -1,0 +1,25 @@
+pkgname=meta-emacs
+pkgver=1.0.0
+pkgrel=1
+arch=('any')
+license=('MIT')
+source=('git+https://github.com/yanboyang713/doom.git')
+md5sums=('SKIP')
+
+package() {
+    depends=('git' 'emacs' 'ripgrep' 'fd'
+             'shellcheck' 'libvterm' 'libvoikko'
+             'hspell' 'nuspell' 'hunspell' 'aspell'
+             'aspell-en' 'pandoc' 'emacs-pdf-tools-git'
+             'mu' 'mbsync-git')
+
+    rm -rf ~/.emacs.d
+    rm -rf ~/.config/doom
+
+    git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
+
+    mv $srcdir/doom ~/.config/doom
+
+    ~/.emacs.d/bin/doom install
+
+}
