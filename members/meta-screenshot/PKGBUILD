@@ -1,6 +1,6 @@
 pkgname=meta-screenshot
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 arch=('any')
 source=("meta-screenshot")
 license=('MIT')
