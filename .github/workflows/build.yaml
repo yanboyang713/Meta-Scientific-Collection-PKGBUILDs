@@ -42,7 +42,7 @@ jobs:
           AUTH_USERNAME: yanboyang713
           AUTH_PASSWORD: ${{ secrets.AUTH_PASSWORD }}
         run: |
-          cd pacman-repo
+          cd meta-scientific-repository
           git config user.name "$COMMIT_AUTHOR_NAME"
           git config user.email "$COMMIT_AUTHOR_EMAIL"
           git add -v .
