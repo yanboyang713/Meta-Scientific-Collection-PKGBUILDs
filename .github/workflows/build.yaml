@@ -18,7 +18,7 @@ jobs:
         run: ./test.bash
 
       - name: Clone target repository
-        run: git clone https://github.com/yanboyang713/Meta-Scientific-repository.git meta-scientific-repository
+        run: git clone https://github.com/yanboyang713/Meta-Scientific-repository.git Meta-Scientific-repository
 
       - name: Build pacman packages
         uses: pacman-repo-builder/action@0.0.0-rc.62
@@ -32,7 +32,7 @@ jobs:
           AUTH_USERNAME: yanboyang713
           AUTH_PASSWORD: ${{ secrets.AUTH_PASSWORD }}
         run: |
-          cd meta-scientific-repository
+          cd Meta-Scientific-repository
           git config user.name "$COMMIT_AUTHOR_NAME"
           git config user.email "$COMMIT_AUTHOR_EMAIL"
           git add -v .
