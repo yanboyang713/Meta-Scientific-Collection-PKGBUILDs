@@ -1,11 +1,19 @@
 * Meta Scientific Linux Collection PKGBUILDs
-Meta Scientific Collection of PKGBUILDs
+Meta Scientific Linux - Collection of PKGBUILDs
+
+** Installation
+Add the following code snippet to your /etc/pacman.conf:
+
+#+begin_src file
+[meta-scientific]
+SigLevel = Optional
+Server = https://raw.github.com/yanboyang713/Meta-Scientific-repository/main/repo
+#+end_src
+
+Then, run *sudo pacman -Sy* to update repository.
+
 
 ** Powered by
 
 + GitHub Action
 + [[https://github.com/pacman-repo-builder][pacman-repo-builder]]
-
-** Installation
-
-Go to [[https://github.com/KSXGitHub/pacman-repo][the target repo]] for further instructions.
