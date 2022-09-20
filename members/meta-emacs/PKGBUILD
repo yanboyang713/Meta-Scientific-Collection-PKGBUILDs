@@ -12,5 +12,6 @@ depends=('git' 'emacs' 'ripgrep' 'fd'
          'aspell-en' 'pandoc' 'emacs-pdf-tools-git'
          'mu' 'mbsync-git')
 
-package (){
+package() {
+	echo "test"
 }
