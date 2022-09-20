@@ -5,6 +5,7 @@ arch=('any')
 license=('MIT')
 source=('doomConfig::git+https://github.com/yanboyang713/doom.git')
 md5sums=('SKIP')
+install="meta-emacs.install"
 depends=('git' 'emacs' 'ripgrep' 'fd'
          'shellcheck' 'libvterm' 'libvoikko'
          'hspell' 'nuspell' 'hunspell' 'aspell'

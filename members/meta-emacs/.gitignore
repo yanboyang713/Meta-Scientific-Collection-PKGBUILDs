@@ -1,3 +1,4 @@
 *
 !/.gitignore
 !/PKGBUILD
+!/meta-emacs.install
