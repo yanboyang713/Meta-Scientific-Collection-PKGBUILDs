@@ -10,3 +10,4 @@ global-settings:
 members:
   - directory: meta-screenshot
   - directory: meta-emacs
+	pacman: yay

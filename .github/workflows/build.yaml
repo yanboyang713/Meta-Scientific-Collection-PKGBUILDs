@@ -23,7 +23,16 @@ jobs:
       - name: Build pacman packages
         uses: pacman-repo-builder/action@0.0.0-rc.62
         with:
-          command: build-pacman-repo build
+          command: |
+            set -o errexit -o pipefail -o nounset
+            (
+              echo ''
+              echo '[meta-scientific]'
+              echo 'SigLevel = Optional'
+              echo 'Server = https://raw.github.com/yanboyang713/Meta-Scientific-repository/main/repo'
+            ) >> /etc/pacman.conf
+            pacman -Sy
+            build-pacman-repo build
 
       - name: Upload packages
         env:
