@@ -6,7 +6,7 @@ global-settings:
   packager: 'Boyang Yan <yanboyang713@gmail.com>'
   check: enabled
   allow-failure: false
-  install-missing-dependencies: trues
+  install-missing-dependencies: true
 members:
   - directory: meta-screenshot
   - directory: meta-emacs
