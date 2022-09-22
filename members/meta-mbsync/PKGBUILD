@@ -1,7 +1,7 @@
 # Maintainer: Paulo Matos <pmatos@linki.tools>
 
 pkgname='meta-mbsync-git'
-_pkgname='mbsync'
+_pkgname='meta-mbsync'
 pkgver=912.95d18e2
 pkgrel=1
 pkgdesc="free (GPL) mailbox synchronization program"
