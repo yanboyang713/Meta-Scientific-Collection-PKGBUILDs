@@ -6,9 +6,7 @@ global-settings:
   packager: 'Boyang Yan <yanboyang713@gmail.com>'
   check: enabled
   allow-failure: false
-  install-missing-dependencies: true
-  arch-filter: [x86_64]
+  install-missing-dependencies: trues
 members:
   - directory: meta-screenshot
   - directory: meta-emacs
-    pacman: paru
