@@ -10,3 +10,6 @@ global-settings:
 members:
   - directory: meta-screenshot
   - directory: meta-emacs
+  - directory: meta-emacs-pdf-tools
+  - directory: meta-mu
+  - directory: meta-mbsync
