@@ -13,4 +13,5 @@ depends=('git' 'emacs' 'ripgrep' 'fd'
 
 package() {
 	echo "test"
+	install -d  "$pkgdir"/usr/share/emacs/site-lisp
 }

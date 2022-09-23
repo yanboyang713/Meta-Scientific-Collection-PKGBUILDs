@@ -4,7 +4,7 @@
 _gituser="politza"
 _gitrepo="tablist"
 
-pkgname=meta-emacs-tablist
+pkgname=emacs-tablist-git
 pkgver=1.0.r1.g8079801
 pkgrel=1
 pkgdesc="Extended tabulated-list-mode"
@@ -14,7 +14,7 @@ license=('GPL3')
 depends=('emacs')
 makedepends=('git')
 provides=('emacs-tablist')
-conflicts=('emacs-tablist' 'emacs-tablist-git')
+conflicts=('emacs-tablist')
 source=("git+https://github.com/${_gituser}/${_gitrepo}.git")
 sha256sums=('SKIP')
 

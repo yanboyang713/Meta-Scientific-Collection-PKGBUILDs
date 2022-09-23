@@ -11,7 +11,7 @@ global-settings:
 members:
   - directory: meta-screenshot
   - directory: cask
-  - directory: meta-emacs-tablist
+  - directory: emacs-tablist
   - directory: meta-emacs-pdf-tools
   - directory: meta-mu
   - directory: meta-mbsync
