@@ -1,6 +1,8 @@
 ## arg 1:  the new package version
 pre_install() {
 	echo "pre_install()"
+	cd ~/Documents
+	pwd
 }
 
 ## arg 1:  the new package version
