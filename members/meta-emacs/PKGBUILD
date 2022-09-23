@@ -3,7 +3,6 @@ pkgver=1.0.0
 pkgrel=6
 arch=('any')
 license=('MIT')
-md5sums=('SKIP')
 install="meta-emacs.install"
 depends=('git' 'emacs' 'ripgrep' 'fd'
          'shellcheck' 'libvterm' 'libvoikko'
