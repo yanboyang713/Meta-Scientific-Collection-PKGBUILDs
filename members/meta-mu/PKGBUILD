@@ -3,6 +3,7 @@
 # Contributor: csllbr; Popsch <popsch@gmx.net>
 
 pkgname=meta-mu
+_pkgname=mu
 pkgver=1.8.9
 pkgrel=1
 pkgdesc="Maildir indexer/searcher and Emacs client (mu4e)"
@@ -17,7 +18,7 @@ source=("https://github.com/djcb/mu/releases/download/v${pkgver}/mu-${pkgver}.ta
 sha256sums=('b86d2a6808fd0ee941bd7084fafcbc82992e33dcdb8a7aeee1c34a7ccba8ddb3')
 
 prepare() {
-	cd "$pkgname-$pkgver"
+	cd "$_pkgname-$pkgver"
 	arch-meson \
 		-Dc_args="${CFLAGS}" \
 		-Dcpp_args="${CFLAGS}" \
@@ -29,11 +30,11 @@ prepare() {
 }
 
 build() {
-	cd "$pkgname-$pkgver"
+	cd "$_pkgname-$pkgver"
 	ninja -C build
 }
 
 package() {
-	cd "$pkgname-$pkgver"
+	cd "$_pkgname-$pkgver"
 	DESTDIR="${pkgdir}" meson install -C build
 }
