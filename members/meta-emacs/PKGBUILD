@@ -1,9 +1,9 @@
 pkgname=meta-emacs
 pkgver=1.0.0
-pkgrel=3
+pkgrel=4
 arch=('any')
 license=('MIT')
-source=('doomConfig::git+https://github.com/yanboyang713/doom.git')
+source=('doom::git+https://github.com/yanboyang713/doom.git')
 md5sums=('SKIP')
 install="meta-emacs.install"
 depends=('git' 'emacs' 'ripgrep' 'fd'
@@ -12,6 +12,6 @@ depends=('git' 'emacs' 'ripgrep' 'fd'
          'aspell-en' 'pandoc' 'emacs-pdf-tools-git' 'meta-mu' 'meta-mbsync-git')
 
 package() {
-	cd doomConfig
+	cd doom
 	install -d  "$pkgdir"/usr/share/emacs/site-lisp
 }
