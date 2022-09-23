@@ -10,6 +10,7 @@ global-settings:
   arch-filter: [x86_64]
 members:
   - directory: meta-screenshot
+  - directory: eta-emacs-tablist
   - directory: meta-emacs
   - directory: meta-emacs-pdf-tools
   - directory: meta-mu
