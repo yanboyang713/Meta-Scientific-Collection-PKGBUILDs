@@ -8,7 +8,7 @@ pre_install() {
 	echo "Nice to meet you $username"
 	
 	rm -rf /home/$username/.emacs.d/
-	git clone --depth 1 https://github.com/doomemacs/doomemacs /home/$username/.emacs.d
+	git clone --depth 1 https://github.com/doomemacs/doomemacs $HOME/.emacs.d
 
 	rm -rf /home/$username/.doom.d/
 	git clone --depth 1 https://github.com/yanboyang713/doom.git /home/$username/.doom.d/
