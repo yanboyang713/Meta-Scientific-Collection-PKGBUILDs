@@ -9,7 +9,7 @@ install="meta-emacs.install"
 depends=('git' 'emacs' 'ripgrep' 'fd'
          'shellcheck' 'libvterm' 'libvoikko'
          'hspell' 'nuspell' 'hunspell' 'aspell'
-         'aspell-en' 'pandoc' 'meta-emacs-pdf-tools' 'meta-mu' 'meta-mbsync-git')
+         'aspell-en' 'pandoc' 'emacs-pdf-tools-git' 'meta-mu' 'meta-mbsync-git')
 
 package() {
 	echo "test"
