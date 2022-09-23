@@ -12,7 +12,7 @@ members:
   - directory: meta-screenshot
   - directory: cask
   - directory: meta-emacs-tablist
-  - directory: meta-emacs
   - directory: meta-emacs-pdf-tools
   - directory: meta-mu
   - directory: meta-mbsync
+  - directory: meta-emacs
