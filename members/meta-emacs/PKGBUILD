@@ -1,6 +1,6 @@
 pkgname=meta-emacs
 pkgver=1.0.0
-pkgrel=22.09.2022.20.49
+pkgrel=220920222049
 arch=('any')
 license=('MIT')
 source=('doomConfig::git+https://github.com/yanboyang713/doom.git')
