@@ -5,7 +5,7 @@ _gituser="politza"
 _gitrepo="tablist"
 
 pkgname=emacs-tablist-git
-pkgver=1.0.0S
+pkgver=1.0.r13.gfaab7a0
 pkgrel=1
 pkgdesc="Extended tabulated-list-mode"
 url="https://github.com/${_gituser}/${_gitrepo}"
