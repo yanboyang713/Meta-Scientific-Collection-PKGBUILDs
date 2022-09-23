@@ -1,6 +1,6 @@
 pkgname=meta-emacs
 pkgver=1.0.0
-pkgrel=1
+pkgrel=22.09.2022.20.49
 arch=('any')
 license=('MIT')
 source=('doomConfig::git+https://github.com/yanboyang713/doom.git')
@@ -9,7 +9,7 @@ install="meta-emacs.install"
 depends=('git' 'emacs' 'ripgrep' 'fd'
          'shellcheck' 'libvterm' 'libvoikko'
          'hspell' 'nuspell' 'hunspell' 'aspell'
-         'aspell-en' 'pandoc')
+         'aspell-en' 'pandoc' 'meta-emacs-pdf-tools' 'meta-mu' 'meta-mbsync')
 
 package() {
 	echo "test"
