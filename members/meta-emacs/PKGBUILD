@@ -1,6 +1,6 @@
 pkgname=meta-emacs
 pkgver=1.0.0
-pkgrel=8
+pkgrel=9
 arch=('any')
 license=('MIT')
 install="meta-emacs.install"

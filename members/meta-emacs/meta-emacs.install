@@ -1,51 +1,37 @@
 ## arg 1:  the new package version
 pre_install() {
+	
+	rm -rf /home/*/.emacs.d/
+	git clone --depth 1 https://github.com/doomemacs/doomemacs /home/*/.emacs.d
 
-	echo "Please, input your user name, Meta Emacs will write config files to your DIR"
-	read username
-	
-	
-	echo "Nice to meet you $username"
-	
-	rm -rf /home/$username/.emacs.d/
-	git clone --depth 1 https://github.com/doomemacs/doomemacs $HOME/.emacs.d
-
-	rm -rf /home/$username/.doom.d/
-	git clone --depth 1 https://github.com/yanboyang713/doom.git /home/$username/.doom.d/
+	rm -rf /home/*/.doom.d/
+	git clone --depth 1 https://github.com/yanboyang713/doom.git /home/*/.doom.d/
 }
 
 ## arg 1:  the new package version
 post_install() {
-	/home/$username/.emacs.d/bin/doom install
+	/home/*/.emacs.d/bin/doom install
 }
 
 ## arg 1:  the new package version
 ## arg 2:  the old package version
 pre_upgrade() {
-	echo "Please, input your user name, Meta Emacs will update config files to your DIR"
-	read username
-	
-	
-	echo "Nice to meet you $username"
 
-	rm -rf /home/$username/.doom.d/
-	git clone --depth 1 https://github.com/yanboyang713/doom.git /home/$username/.doom.d/
+	rm -rf /home/*/.doom.d/
+	git clone --depth 1 https://github.com/yanboyang713/doom.git /home/*/.doom.d/
 }
 
 ## arg 1:  the new package version
 ## arg 2:  the old package version
 post_upgrade() {
-	/home/$username/.emacs.d/bin/doom sync
+	/home/*/.emacs.d/bin/doom sync
 }
 
 ## arg 1:  the old package version
 pre_remove() {
-	echo "Please, input your user name, Meta Emacs will delete all of config files"
-	read username
-	
-	echo "Nice to meet you $username"
-	rm -rf /home/$username/.emacs.d
-	rm -rf /home/$username/.doom.d/
+
+	rm -rf /home/*/.emacs.d
+	rm -rf /home/*/.doom.d/
 }
 
 ## arg 1:  the old package version
