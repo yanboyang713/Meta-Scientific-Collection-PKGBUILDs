@@ -16,3 +16,4 @@ members:
   - directory: meta-mu
   - directory: meta-mbsync
   - directory: meta-emacs
+  - directory: meta-wm
