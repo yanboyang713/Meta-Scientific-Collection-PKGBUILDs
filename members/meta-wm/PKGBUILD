@@ -25,6 +25,15 @@ pkgver() {
 
 build() {
 	cd "$_pkgname"
+
+    if [ -d "~/.config/" ]
+    then
+        echo "Directory ~/.config/ exists."
+    else
+        echo "Error: Directory ~/.config/ does not exists."
+        mkdir "~/.config/"
+    fi
+
 	mkdir "$_output_dir"
 	cp -r "./" "$_output_dir"
 	cd "$_output_dir/chadwm"
