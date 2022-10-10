@@ -31,7 +31,7 @@ build() {
         echo "Directory ~/.config/ exists."
     else
         echo "Error: Directory ~/.config/ does not exists."
-        mkdir "~/.config/"
+        mkdir ~/.config/
     fi
 
 	mkdir "$_output_dir"
