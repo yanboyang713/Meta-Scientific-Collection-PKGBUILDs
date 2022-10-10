@@ -18,10 +18,10 @@ conflicts=('dwm')
 source=("$_pkgname::git+https://github.com/yanboyang713/chadwm.git")
 sha256sums=('SKIP')
 
-pkgver() {
-	cd "$_pkgname"
-	printf "0.1.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}
+#pkgver() {
+#	cd "$_pkgname"
+#	printf "0.1.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+#}
 
 build() {
 	cd "$_pkgname"
