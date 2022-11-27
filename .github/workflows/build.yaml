@@ -18,7 +18,7 @@ jobs:
         run: ./test.bash
 
       - name: Clone target repository
-        run: git clone https://github.com/yanboyang713/Meta-Scientific-repository.git Meta-Scientific-repository
+        run: git clone --recurse-submodules https://github.com/yanboyang713/Meta-Scientific-repository.git Meta-Scientific-repository
 
       - name: Build pacman packages
         uses: pacman-repo-builder/action@0.0.0-rc.63
