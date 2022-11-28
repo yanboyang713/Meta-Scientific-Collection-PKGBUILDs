@@ -21,7 +21,7 @@ jobs:
         run: |
           ls -la
           git pull --recurse-submodules
-          git submodule update --remote
+          git submodule update --init --recursive
           cd ./members
           ls -la
           cd ./nerd-fonts-jetbrains-mono
