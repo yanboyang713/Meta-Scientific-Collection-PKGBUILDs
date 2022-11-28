@@ -15,11 +15,12 @@ jobs:
         run: sudo apt install python3 python3-yaml
 
       - name: Clone target repository
-        run: git clone --recurse-submodules https://github.com/yanboyang713/Meta-Scientific-repository.git Meta-Scientific-repository
+        run: git clone https://github.com/yanboyang713/Meta-Scientific-repository.git Meta-Scientific-repository
 
       - name: Run tests
         run: |
-          cd Meta-Scientific-repository
+          git clone --recurse-submodules git@github.com:yanboyang713/Meta-Scientific-Collection-PKGBUILDs.git test-dir
+          cd test-dir
           ./test.bash
 
       - name: Build pacman packages
