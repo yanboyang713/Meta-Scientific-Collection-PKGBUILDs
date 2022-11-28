@@ -19,8 +19,7 @@ jobs:
 
       - name: Run tests
         run: |
-          git clone --depth 1 --recurse-submodules https://github.com/yanboyang713/Meta-Scientific-Collection-PKGBUILDs.git test-dir
-          cd test-dir
+          git pull --recurse-submodules
           ./test.bash
 
       - name: Build pacman packages
@@ -35,7 +34,6 @@ jobs:
               echo 'Server = https://raw.github.com/yanboyang713/Meta-Scientific-repository/main/repo'
             ) >> /etc/pacman.conf
             pacman -Sy
-            cd test-dir
             build-pacman-repo build
 
       - name: Upload packages
