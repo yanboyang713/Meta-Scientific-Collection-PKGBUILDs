@@ -20,7 +20,9 @@ jobs:
       - name: Run tests
         run: |
           ls -la
-          git pull --recurse-submodules
+          git submodule update --remote
+          cd /members/nerd-fonts-jetbrains-mono
+          ls -la
           ./test.bash
 
       - name: Build pacman packages
