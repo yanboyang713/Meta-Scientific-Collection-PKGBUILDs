@@ -19,6 +19,7 @@ jobs:
 
       - name: Run tests
         run: |
+          ls -la
           git pull --recurse-submodules
           ./test.bash
 
