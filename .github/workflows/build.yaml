@@ -22,7 +22,7 @@ jobs:
           ls -la
           git pull --recurse-submodules
           git submodule update --remote
-          cd /members
+          cd ./members
           ls -la
           cd ./nerd-fonts-jetbrains-mono
           ls -la
