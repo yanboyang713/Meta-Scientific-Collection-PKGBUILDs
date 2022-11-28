@@ -19,12 +19,7 @@ jobs:
 
       - name: Run tests
         run: |
-          ls -la
           git submodule update --init --recursive
-          cd ./members
-          ls -la
-          cd ./nerd-fonts-jetbrains-mono
-          ls -la
           ./test.bash
 
       - name: Build pacman packages
