@@ -1,0 +1,3 @@
+[submodule "members/nerd-fonts-jetbrains-mono"]
+	path = members/nerd-fonts-jetbrains-mono
+	url = https://aur.archlinux.org/nerd-fonts-jetbrains-mono.git/
