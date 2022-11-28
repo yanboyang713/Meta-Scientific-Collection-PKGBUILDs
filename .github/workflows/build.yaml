@@ -19,7 +19,7 @@ jobs:
 
       - name: Run tests
         run: |
-          git clone --recurse-submodules git@github.com:yanboyang713/Meta-Scientific-Collection-PKGBUILDs.git test-dir
+          git clone --depth 1 --recurse-submodules https://github.com/yanboyang713/Meta-Scientific-Collection-PKGBUILDs.git test-dir
           cd test-dir
           ./test.bash
 
