@@ -35,7 +35,6 @@ jobs:
               echo 'Server = https://raw.github.com/yanboyang713/Meta-Scientific-repository/main/repo'
             ) >> /etc/pacman.conf
             pacman -Sy
-            git clone --depth 1 --recurse-submodules https://github.com/yanboyang713/Meta-Scientific-Collection-PKGBUILDs.git test-dir
             cd test-dir
             build-pacman-repo build
 
