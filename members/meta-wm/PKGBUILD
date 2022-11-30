@@ -2,9 +2,9 @@
 pkgname=meta-wm
 _pkgname=meta-wm-download
 #_output_dir=~/.config/chadwm
-pkgver=0.2
+pkgver=0.3
 pkgrel=1
-epoch=1
+#epoch=1
 pkgdesc="Meta-WM's version of ChadWM (DWM Modif)"
 arch=('x86_64' 'i686')
 url="https://github.com/yanboyang713/meta-wm.git"
