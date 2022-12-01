@@ -1,21 +1,21 @@
 # Maintainer: Boyang Yan <yanboyang713@gmail.com>
 pkgname=meta-wm
 _pkgname=meta-wm-download
-#_output_dir=~/.config/chadwm
-pkgver=0.4
+pkgver=0.5
 pkgrel=1
 #epoch=1
 pkgdesc="Meta-WM's version of ChadWM (DWM Modif)"
 arch=('x86_64' 'i686')
 url="https://github.com/yanboyang713/meta-wm.git"
 license=('MIT')
-depends=('picom' 'feh' 'acpi' 'rofi' 'pavucontrol' 'zsh' 'imlib2' 'xorg-xsetroot' 'wget' 'xorg-server' 'alsa-utils' 'xorg-xbacklight' 'nerd-fonts-jetbrains-mono')
+#depends=('picom' 'feh' 'acpi' 'rofi' 'pavucontrol' 'zsh' 'imlib2' 'xorg-xsetroot' 'wget' 'xorg-server' 'alsa-utils' 'xorg-xbacklight' 'nerd-fonts-jetbrains-mono')
+depends=('picom' 'feh' 'acpi' 'rofi' 'pavucontrol' 'zsh' 'imlib2' 'xorg-xsetroot' 'wget' 'xorg-server' 'alsa-utils' 'nerd-fonts-jetbrains-mono')
+#'picom' 'feh' 'acpi' 'rofi' 'pavucontrol' 'dash' 'imlib2' 'xorg-xsetroot' 'wget' 'xorg-server'
 makedepends=('git')
 checkdepends=()
 optdepends=()
 provides=('dwm')
 conflicts=('dwm')
-#source=("$_pkgname::git+https://github.com/yanboyang713/meta-wm.git")
 source=("git+https://github.com/yanboyang713/meta-wm.git")
 sha256sums=('SKIP')
 
@@ -25,13 +25,9 @@ sha256sums=('SKIP')
 #}
 
 build() {
-    echo "pkgdir: " ${pkgdir}
-    echo "_pkgname: " ${_pkgname}
     # Build meta WM
-	#cd "$_pkgname/metawm"
     cd "$srcdir/$pkgname/metawm"
 	make
-
 }
 
 package() {
@@ -39,16 +35,12 @@ package() {
 	cd "$srcdir/$pkgname/metawm"
 	make PREFIX=/usr DESTDIR="${pkgdir}" install
 
-	#cd "$_output_dir/chadwm"
-    # Copy .Xresources and script to DIR /opt/pkgname
-	#cd "$_pkgname"
     cd "$srcdir/$pkgname"
     mkdir -p "${pkgdir}/opt/${pkgname}"
 	cp -rf ./scripts "${pkgdir}/opt/${pkgname}"
 	cp ./.Xresources "${pkgdir}/opt/${pkgname}"
 
     # Set-up
-	#cp ./meta-wm.desktop "/usr/share/xsessions"
 	install -Dm644 ./meta-wm.desktop "${pkgdir}/usr/share/xsessions/meta-wm.desktop"
 
     # Install License and README
@@ -63,5 +55,4 @@ package() {
 	install -Dm555 ./fonts/materialdesignicons-webfont.woff "${pkgdir}/usr/local/share/fonts/meta-wm/materialdesignicons-webfont.woff"
 	install -Dm555 ./fonts/materialdesignicons-webfont.woff2 "${pkgdir}/usr/local/share/fonts/meta-wm/materialdesignicons-webfont.woff2"
 	install -Dm555 ./fonts/MaterialIcons-Regular.ttf "${pkgdir}/usr/local/share/fonts/meta-wm/MaterialIcons-Regular.ttf"
-
 }
