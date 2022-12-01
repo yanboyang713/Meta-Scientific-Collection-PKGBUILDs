@@ -2,16 +2,14 @@
 pkgname=meta-wm
 _pkgname=meta-wm-download
 pkgver=0.5
-pkgrel=3
+pkgrel=4
 #epoch=1
 pkgdesc="Meta-WM's version of ChadWM (DWM Modif)"
 arch=('x86_64' 'i686')
 url="https://github.com/yanboyang713/meta-wm.git"
 license=('MIT')
-#depends=('picom' 'feh' 'acpi' 'rofi' 'pavucontrol' 'zsh' 'imlib2' 'xorg-xsetroot' 'wget' 'xorg-server' 'alsa-utils' 'xorg-xbacklight' 'nerd-fonts-jetbrains-mono')
-depends=('picom' 'feh' 'acpi' 'rofi' 'pavucontrol' 'zsh' 'imlib2' 'xorg-xsetroot' 'wget' 'xorg-server' 'alsa-utils' 'nerd-fonts-jetbrains-mono')
-#'picom' 'feh' 'acpi' 'rofi' 'pavucontrol' 'dash' 'imlib2' 'xorg-xsetroot' 'wget' 'xorg-server'
-makedepends=('git')
+depends=('picom' 'feh' 'acpi' 'rofi' 'pavucontrol' 'zsh' 'imlib2' 'xorg-xsetroot' 'wget' 'xorg-server' 'alsa-utils' 'nerd-fonts-jetbrains-mono' 'libx11' 'libxinerama' 'libxft' 'freetype2')
+makedepends=('git' 'gcc')
 checkdepends=()
 optdepends=()
 provides=('dwm')
@@ -27,10 +25,7 @@ sha256sums=('SKIP')
 build() {
     # Build meta WM
     cd "$srcdir/$pkgname/metawm"
-	make
-
-    make options
-    cc --version
+	make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11 FREETYPEINC=/usr/include/freetype2
 }
 
 package() {
