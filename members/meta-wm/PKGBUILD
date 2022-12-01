@@ -28,6 +28,9 @@ build() {
     # Build meta WM
     cd "$srcdir/$pkgname/metawm"
 	make
+
+    make options
+    cc --version
 }
 
 package() {
