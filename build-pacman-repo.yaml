@@ -2,7 +2,7 @@ global-settings:
   container: members
   repository: Meta-Scientific-repository/repo/meta-scientific.db.tar.gz
   dereference-database-symlinks: true
-  clean-after-build: true
+  clean-after-build: false
   packager: 'Boyang Yan <yanboyang713@gmail.com>'
   check: enabled
   allow-failure: false
