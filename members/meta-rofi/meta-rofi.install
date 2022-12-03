@@ -1,0 +1,9 @@
+post_install() {
+	bash meta-rofi-setup
+}
+post_upgrade() {
+	bash meta-rofi-setup
+}
+post_remove() {
+	echo "Bye"
+}

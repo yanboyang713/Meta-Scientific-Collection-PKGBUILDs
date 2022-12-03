@@ -10,6 +10,7 @@ global-settings:
   arch-filter: [x86_64]
 members:
   - directory: meta-screenshot
+  - directory: meta-rofi
   - directory: cask
   - directory: emacs-tablist-git
   - directory: emacs-pdf-tools-git
