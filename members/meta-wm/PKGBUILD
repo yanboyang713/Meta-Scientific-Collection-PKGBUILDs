@@ -1,14 +1,17 @@
 # Maintainer: Boyang Yan <yanboyang713@gmail.com>
 pkgname=meta-wm
-_pkgname=meta-wm-download
 pkgver=0.5
-pkgrel=5
+pkgrel=6
 #epoch=1
 pkgdesc="Meta-WM's version of ChadWM (DWM Modif)"
 arch=('x86_64' 'i686')
 url="https://github.com/yanboyang713/meta-wm.git"
 license=('MIT')
-depends=('picom' 'feh' 'acpi' 'rofi' 'pavucontrol' 'zsh' 'imlib2' 'xorg-xsetroot' 'wget' 'xorg-server' 'alsa-utils' 'nerd-fonts-jetbrains-mono' 'libx11' 'libxinerama' 'libxft' 'freetype2')
+depends=('picom' 'feh' 'acpi' 'meta-rofi'
+'pavucontrol' 'zsh' 'imlib2' 'xorg-xsetroot'
+'wget' 'xorg-server' 'alsa-utils' 'nerd-fonts-jetbrains-mono'
+'libx11' 'libxinerama' 'libxft' 'freetype2' 'meta-screenshot'
+'xsecurelock' 'xss-lock')
 makedepends=('git' 'gcc')
 checkdepends=()
 optdepends=()
