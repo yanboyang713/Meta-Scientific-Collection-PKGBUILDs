@@ -7,11 +7,7 @@ pkgdesc="Meta-WM's version of ChadWM (DWM Modif)"
 arch=('x86_64' 'i686')
 url="https://github.com/yanboyang713/meta-wm.git"
 license=('MIT')
-depends=('picom' 'feh' 'acpi' 'meta-rofi'
-'pavucontrol' 'zsh' 'imlib2' 'xorg-xsetroot'
-'wget' 'xorg-server' 'alsa-utils' 'nerd-fonts-jetbrains-mono'
-'libx11' 'libxinerama' 'libxft' 'freetype2' 'meta-screenshot'
-'xsecurelock' 'xss-lock')
+depends=('picom' 'feh' 'acpi' 'meta-rofi' 'pavucontrol' 'zsh' 'imlib2' 'xorg-xsetroot' 'wget' 'xorg-server' 'alsa-utils' 'nerd-fonts-jetbrains-mono' 'libx11' 'libxinerama' 'libxft' 'freetype2' 'meta-screenshot' 'xsecurelock' 'xss-lock')
 makedepends=('git' 'gcc')
 checkdepends=()
 optdepends=()
@@ -28,7 +24,7 @@ sha256sums=('SKIP')
 build() {
     # Build meta WM
     cd "$srcdir/$pkgname/metawm"
-	make X11INC=/usr/include/X11 X11LIB=/usr/lib FREETYPEINC=/usr/include/freetype2
+    make X11INC=/usr/include/X11 X11LIB=/usr/lib FREETYPEINC=/usr/include/freetype2
 }
 
 package() {
@@ -36,8 +32,8 @@ package() {
 	cd "$srcdir/$pkgname/metawm"
 	make PREFIX=/usr DESTDIR="${pkgdir}" install
 
-    cd "$srcdir/$pkgname"
-    mkdir -p "${pkgdir}/opt/${pkgname}"
+        cd "$srcdir/$pkgname"
+        mkdir -p "${pkgdir}/opt/${pkgname}"
 	cp -rf ./scripts "${pkgdir}/opt/${pkgname}"
 	cp ./.Xresources "${pkgdir}/opt/${pkgname}"
 
@@ -49,7 +45,7 @@ package() {
 	install -Dm644 ./README.org "${pkgdir}/usr/share/doc/${pkgname}/README.md"
 
     # Fonts
-    mkdir -p "${pkgdir}/usr/local/share/fonts/meta-wm"
+        mkdir -p "${pkgdir}/usr/local/share/fonts/meta-wm"
 	install -Dm555 ./fonts/MaterialDesignIconsDesktop.ttf "${pkgdir}/usr/local/share/fonts/meta-wm/MaterialDesignIconsDesktop.ttf"
 	install -Dm555 ./fonts/Material.ttf "${pkgdir}/usr/local/share/fonts/meta-wm/Material.ttf"
 	install -Dm555 ./fonts/materialdesignicons-webfont.ttf "${pkgdir}/usr/local/share/fonts/meta-wm/materialdesignicons-webfont.ttf"
