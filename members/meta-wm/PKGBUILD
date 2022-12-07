@@ -1,7 +1,7 @@
 # Maintainer: Boyang Yan <yanboyang713@gmail.com>
 pkgname=meta-wm
 pkgver=0.5
-pkgrel=10
+pkgrel=12
 #epoch=1
 pkgdesc="Meta-WM's version of ChadWM (DWM Modif)"
 arch=('x86_64' 'i686')
@@ -28,14 +28,20 @@ build() {
 }
 
 package() {
+
     # Install meta WM
 	cd "$srcdir/$pkgname/metawm"
 	make PREFIX=/usr DESTDIR="${pkgdir}" install
 
-        cd "$srcdir/$pkgname"
-        mkdir -p "${pkgdir}/opt/${pkgname}"
-	cp -rf ./scripts "${pkgdir}/opt/${pkgname}"
-	cp ./.Xresources "${pkgdir}/opt/${pkgname}"
+    cd "$srcdir/$pkgname"
+    #mkdir -p "${pkgdir}/opt/${pkgname}"
+    #cp ./.Xresources "${pkgdir}/opt/${pkgname}"
+    install -d ${pkgdir}/opt/${pkgname}
+    install -Dm644 ./.Xresources ${pkgdir}/opt/${pkgname}
+    install -d ${pkgdir}/opt/${pkgname}/scripts/
+	#cp -rf ./scripts "${pkgdir}/opt/${pkgname}"
+    #cp -r ${srcdir}/${pkgname}-${pkgver}/folder/* ${pkgdir}/opt/
+	cp -r ./scripts/* ${pkgdir}/opt/${pkgname}/scripts/
 
     # Set-up
 	install -Dm644 ./meta-wm.desktop "${pkgdir}/usr/share/xsessions/meta-wm.desktop"
