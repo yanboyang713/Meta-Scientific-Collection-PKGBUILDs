@@ -24,7 +24,7 @@ sha256sums=('SKIP')
 build() {
     # Build meta WM
     cd "$srcdir/$pkgname/metawm"
-    make X11INC=/usr/include/X11 X11LIB=/usr/lib FREETYPEINC=/usr/include/freetype2 MARCH=-march=x86-64
+    make X11INC=/usr/include/X11 X11LIB=/usr/lib FREETYPEINC=/usr/include/freetype2
 }
 
 package() {
