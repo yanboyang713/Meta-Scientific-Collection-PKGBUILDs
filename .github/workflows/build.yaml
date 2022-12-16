@@ -38,6 +38,9 @@ jobs:
             ) >> /etc/pacman.conf
             pacman -Sy
             build-pacman-repo build
+            echo "show system information"
+            uname -m
+            uname -a
 
       - name: Upload packages
         env:
