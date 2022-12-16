@@ -4,7 +4,7 @@ pkgrel=1
 arch=('any')
 source=("profile")
 license=('MIT')
-depends=('fcitx' 'fcitx-im' 'fcitx-configtool')
+depends=('fcitx' 'fcitx-configtool')
 md5sums=('SKIP')
 
 package() {
