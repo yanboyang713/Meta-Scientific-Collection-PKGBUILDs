@@ -8,5 +8,6 @@ depends=('fcitx' 'fcitx-configtool')
 md5sums=('SKIP')
 
 package() {
-    install -Dm755 "${srcdir}/profile" "${pkgdir}/etc/profile"
+	mv "${pkgdir}/etc/profile" "${pkgdir}/etc/profile.backup"
+    	install -Dm755 "${srcdir}/profile" "${pkgdir}/etc/profile"
 }
