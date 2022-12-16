@@ -1,0 +1,12 @@
+pkgname=meta-profile
+pkgver=1.0
+pkgrel=1
+arch=('any')
+source=("profile")
+license=('MIT')
+depends=('fcitx' 'fcitx-im' 'fcitx-configtool')
+md5sums=('SKIP')
+
+package() {
+    install -Dm755 "${srcdir}/profile" "${pkgdir}/etc/profile"
+}
