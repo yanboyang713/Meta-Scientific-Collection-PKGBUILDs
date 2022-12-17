@@ -9,7 +9,7 @@ global-settings:
   install-missing-dependencies: true
   arch-filter: [x86_64]
 members:
-  - directory: meta-profile
+  - directory: meta-xdg
   - directory: meta-screenshot
   - directory: meta-rofi
   - directory: cask

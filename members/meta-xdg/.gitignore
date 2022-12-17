@@ -1,4 +1,5 @@
 *
 !/.gitignore
 !/PKGBUILD
-!/profile
+!/xdg.sh
+!/xdg.install

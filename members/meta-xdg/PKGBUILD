@@ -1,0 +1,12 @@
+pkgname=meta-xdg
+pkgver=1.0
+pkgrel=1
+arch=('any')
+source=("xdg.sh")
+license=('MIT')
+install="xdg.install"
+md5sums=('SKIP')
+
+package() {
+    	install -Dm644 "${srcdir}/xdg.sh" "${pkgdir}/etc/profile.d/xdg.sh"
+}
