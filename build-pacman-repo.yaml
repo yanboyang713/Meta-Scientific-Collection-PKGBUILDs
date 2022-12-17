@@ -9,7 +9,6 @@ global-settings:
   install-missing-dependencies: true
   arch-filter: [x86_64]
 members:
-  #- directory: brave-bin
   - directory: meta-xdg
   - directory: meta-alacritty
   - directory: meta-screenshot
