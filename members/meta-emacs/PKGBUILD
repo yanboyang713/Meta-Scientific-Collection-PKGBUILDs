@@ -1,9 +1,9 @@
 pkgname=meta-emacs
 pkgver=1.0.0
-pkgrel=9
+pkgrel=10
 arch=('any')
 license=('MIT')
-install="meta-emacs.install"
+#install="meta-emacs.install"
 depends=('git' 'emacs' 'ripgrep' 'fd'
          'shellcheck' 'libvterm' 'libvoikko'
          'hspell' 'nuspell' 'hunspell' 'aspell'
