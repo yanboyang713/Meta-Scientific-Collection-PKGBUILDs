@@ -10,6 +10,7 @@ global-settings:
   arch-filter: [x86_64]
 members:
   - directory: meta-xdg
+  - directory: meta-alacritty
   - directory: meta-screenshot
   - directory: meta-rofi
   - directory: cask

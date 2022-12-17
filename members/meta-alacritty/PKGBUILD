@@ -1,0 +1,12 @@
+pkgname=meta-alacritty
+pkgver=1.0
+pkgrel=1
+arch=('any')
+source=("alacritty.yml")
+license=('MIT')
+depends=('alacritty')
+md5sums=('SKIP')
+
+package() {
+    	install -Dm644 "${srcdir}/alacritty.yml" "${pkgdir}/${XDG_CONFIG_HOME}/alacritty/alacritty.yml"
+}
