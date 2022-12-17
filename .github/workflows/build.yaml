@@ -14,6 +14,11 @@ jobs:
       - name: Install APT packages
         run: sudo apt install python3 python3-yaml
 
+      - name: Show system information
+        run: |
+            uname -m
+            uname -a
+
       - name: Clone target repository
         run: git clone https://github.com/yanboyang713/Meta-Scientific-repository.git Meta-Scientific-repository
 
@@ -21,9 +26,6 @@ jobs:
         run: |
           git submodule update --init --recursive
           ./test.bash
-          echo "show system information"
-          uname -m
-          uname -a
 
       - name: Build pacman packages
         uses: pacman-repo-builder/action@0.0.0-rc.63
@@ -37,11 +39,9 @@ jobs:
               echo 'Server = https://raw.github.com/yanboyang713/Meta-Scientific-repository/main/repo'
             ) >> /etc/pacman.conf
             pacman -Sy
+            pacman -S git-lfs
             build-pacman-repo build
-            echo "show system information"
-            uname -m
-            uname -a
-
+            
       - name: Upload packages
         env:
           COMMIT_AUTHOR_NAME: ${{ secrets.COMMIT_AUTHOR_NAME }}
