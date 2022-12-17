@@ -1,10 +1,11 @@
 pkgname=meta-alacritty
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 arch=('any')
 source=("alacritty.yml")
 license=('MIT')
 depends=('alacritty')
+optdepends=('meta-xdg: set-up xdg dir')
 md5sums=('SKIP')
 
 package() {

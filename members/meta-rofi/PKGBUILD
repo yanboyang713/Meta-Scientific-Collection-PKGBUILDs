@@ -1,7 +1,7 @@
 # Maintainer: Boyang Yan <yanboyang713@gmail.com>
 pkgname=meta-rofi
 pkgver=0.1
-pkgrel=2
+pkgrel=3
 #epoch=1
 pkgdesc="Meta-rofi"
 arch=('x86_64' 'i686')
@@ -11,9 +11,7 @@ depends=('rofi')
 install="meta-rofi.install"
 makedepends=('git')
 checkdepends=()
-optdepends=()
-provides=('rofi')
-#conflicts=('')
+optdepends=('meta-xdg: set-up xdg dir')
 source=("git+https://github.com/yanboyang713/meta-rofi.git")
 sha256sums=('SKIP')
 
