@@ -4,3 +4,6 @@
 [submodule "members/brave-bin"]
 	path = members/brave-bin
 	url = https://aur.archlinux.org/brave-bin.git
+[submodule "members/cask"]
+	path = members/cask
+	url = https://aur.archlinux.org/cask.git
