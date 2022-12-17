@@ -1,3 +1,6 @@
 [submodule "members/nerd-fonts-jetbrains-mono"]
 	path = members/nerd-fonts-jetbrains-mono
 	url = https://aur.archlinux.org/nerd-fonts-jetbrains-mono.git/
+[submodule "members/brave-bin"]
+	path = members/brave-bin
+	url = https://aur.archlinux.org/brave-bin.git
