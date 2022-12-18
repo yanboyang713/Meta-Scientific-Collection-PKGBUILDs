@@ -1,14 +1,17 @@
 pkgname=meta-screenshot
 pkgver=1.0
-pkgrel=2
+pkgrel=3
 arch=('any')
+pkgdesc="take a screenshot and upload to Cloudinary"
+url="https://www.yanboyang.com/cloudinary/"
+depends=('jq' 'python-pip' 'xclip' 'scrot')
+install="meta-screenshot.install"
 source=("meta-screenshot")
 license=('MIT')
 md5sums=('SKIP')
+sha256sums=('SKIP')
 
 package() {
-    depends=('jq' 'python-pip' 'xclip')
-
     install -D -t "$pkgdir/usr/bin" "$srcdir/meta-screenshot"
 
 }

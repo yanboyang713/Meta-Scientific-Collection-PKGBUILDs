@@ -1,0 +1,12 @@
+post_install() {
+	umask 022
+	yes | pip install cloudinary-cli
+}
+post_upgrade() {
+	umask 022
+	pip install cloudinary-cli --upgrade
+}
+post_remove() {
+	umask 022
+	pip uninstall --yes cloudinary-cli
+}
