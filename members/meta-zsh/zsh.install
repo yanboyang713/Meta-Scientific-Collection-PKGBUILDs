@@ -1,0 +1,9 @@
+post_install() {
+	echo "Set ZSH as default shell"
+	chsh -s /usr/bin/zsh
+}
+
+post_remove() {
+	echo "Set Shell back to bash"
+	chsh -s /bin/bash
+}

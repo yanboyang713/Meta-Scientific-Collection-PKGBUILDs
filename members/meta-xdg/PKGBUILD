@@ -1,6 +1,6 @@
 pkgname=meta-xdg
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 arch=('any')
 source=("xdg.sh")
 license=('MIT')

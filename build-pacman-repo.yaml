@@ -21,3 +21,4 @@ members:
   - directory: meta-emacs
   - directory: nerd-fonts-jetbrains-mono
   - directory: meta-wm
+  - directory: meta-zsh

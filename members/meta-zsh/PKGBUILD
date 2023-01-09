@@ -1,0 +1,20 @@
+pkgname=meta-zsh
+pkgver=1.0
+pkgrel=1
+arch=('any')
+source=("zsh.sh" ".zshrc" "git+https://github.com/yanboyang713/meta-zsh.git" "meta-zsh-setup")
+license=('MIT')
+install="zsh.install"
+depends=('zsh' 'meta-xdg')
+md5sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
+
+package() {
+    	install -Dm644 "${srcdir}/zsh.sh" "${pkgdir}/etc/profile.d/zsh.sh"
+    	install -Dm644 "${srcdir}/.zshrc" "${pkgdir}/root/.zshrc"
+
+        install -d ${pkgdir}/root/meta-zsh/
+        cp -r ${srcdir}/meta-zsh/ ${pkgdir}/root/
+
+        install -D -t "$pkgdir/usr/bin" "$srcdir/meta-zsh-setup"
+
+}

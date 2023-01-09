@@ -1,0 +1,6 @@
+*
+!/.gitignore
+!/PKGBUILD
+!/zsh.sh
+!/zsh.install
+!/meta-zsh.sh
