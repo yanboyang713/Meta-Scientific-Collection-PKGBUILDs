@@ -3,4 +3,5 @@
 !/PKGBUILD
 !/zsh.sh
 !/zsh.install
-!/meta-zsh.sh
+!/meta-zsh-setup
+!/.zshrc

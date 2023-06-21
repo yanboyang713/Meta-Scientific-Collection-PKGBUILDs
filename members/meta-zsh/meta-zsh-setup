@@ -1,0 +1,17 @@
+#!/bin/sh
+
+echo $1
+
+if [ $1 == "install" ]; 
+then
+	ln -vsf /root/.zshrc ~/.zshrc
+	echo "Set ZSH as default shell"
+	chsh -s /usr/bin/zsh
+elif [ $1 == "uninstall" ];
+then
+	 unlink ~/.zshrc
+	 echo "Set default shell back to Bash"
+	 chsh -s /bin/bash
+else
+	echo "Wrong Argument"
+fi

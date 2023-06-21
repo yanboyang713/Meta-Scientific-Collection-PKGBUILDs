@@ -9,8 +9,8 @@ depends=('zsh' 'meta-xdg')
 md5sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
 
 package() {
-    	install -Dm644 "${srcdir}/zsh.sh" "${pkgdir}/etc/profile.d/zsh.sh"
-    	install -Dm644 "${srcdir}/.zshrc" "${pkgdir}/root/.zshrc"
+    	install -Dm777 "${srcdir}/zsh.sh" "${pkgdir}/etc/profile.d/zsh.sh"
+    	install -Dm777 "${srcdir}/.zshrc" "${pkgdir}/root/.zshrc"
 
         install -d ${pkgdir}/root/meta-zsh/
         cp -r ${srcdir}/meta-zsh/ ${pkgdir}/root/

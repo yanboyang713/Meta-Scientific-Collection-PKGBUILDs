@@ -19,6 +19,5 @@ members:
   - directory: meta-mu
   - directory: meta-mbsync
   - directory: meta-emacs
-  - directory: nerd-fonts-jetbrains-mono
   - directory: meta-wm
   - directory: meta-zsh
