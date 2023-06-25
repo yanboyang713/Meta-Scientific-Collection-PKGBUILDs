@@ -1,3 +1,6 @@
 [submodule "members/cask"]
 	path = members/cask
 	url = https://aur.archlinux.org/cask.git
+[submodule "members/python-timezonefinder"]
+	path = members/python-timezonefinder
+	url = https://aur.archlinux.org/python-timezonefinder.git

@@ -21,3 +21,5 @@ members:
   - directory: meta-emacs
   - directory: meta-wm
   - directory: meta-zsh
+  - directory: python-timezonefinder
+
