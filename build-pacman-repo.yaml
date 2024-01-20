@@ -22,4 +22,5 @@ members:
   - directory: meta-wm
   - directory: meta-zsh
   - directory: python-timezonefinder
+  - directory: python-sexpdata
 
